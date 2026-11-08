@@ -12,8 +12,9 @@ $EM_CONF['cart_pdf'] = [
     'author_email' => 'ext@extco.de',
     'constraints' => [
         'depends' => [
-            'typo3' => '13.4.0-13.4.99',
-            'cart'  => '11.5.0-11.99.99',
+            'php' => '8.2.0-8.5.99',
+            'typo3' => '13.4.0-14.3.99',
+            'cart'  => '11.5.0-12.99.99',
             'tcpdf' => '6.7.0-6.99.99',
         ],
         'conflicts' => [],
