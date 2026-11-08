@@ -30,7 +30,13 @@ readonly class FileService implements FileServiceInterface
             return null;
         }
 
-        $folder = $storage->getFolder((string)$configuration['storageFolder']);
+        $folderIdentifier = (string)$configuration['storageFolder'];
+        // Create the configured folder (including parent folders) on first use
+        if (!$storage->hasFolder($folderIdentifier)) {
+            $storage->createFolder($folderIdentifier);
+        }
+
+        $folder = $storage->getFolder($folderIdentifier);
         if ($folder instanceof InaccessibleFolder) {
             return null;
         }
